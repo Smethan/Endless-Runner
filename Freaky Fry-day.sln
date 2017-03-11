@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freaky Fry-day.Plugins", "Freaky Fry-day.Plugins.csproj", "{BB11ECC1-1ABA-32E8-F83E-ACB8D6C5011B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freaky Fry-day.Editor.Plugins", "Freaky Fry-day.Editor.Plugins.csproj", "{02C26FB3-11CA-8B52-A1D8-827051E12297}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB11ECC1-1ABA-32E8-F83E-ACB8D6C5011B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB11ECC1-1ABA-32E8-F83E-ACB8D6C5011B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB11ECC1-1ABA-32E8-F83E-ACB8D6C5011B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB11ECC1-1ABA-32E8-F83E-ACB8D6C5011B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02C26FB3-11CA-8B52-A1D8-827051E12297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02C26FB3-11CA-8B52-A1D8-827051E12297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02C26FB3-11CA-8B52-A1D8-827051E12297}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02C26FB3-11CA-8B52-A1D8-827051E12297}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Endless runner game.Plugins", "Endless runner game.Plugins.csproj", "{AE39DCC7-6CE9-C6C1-F506-CBD6EB297B29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Endless runner game", "Endless runner game.csproj", "{3BF06455-CC0E-C2C5-B0EE-FE0801A5276B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Endless runner game.Editor.Plugins", "Endless runner game.Editor.Plugins.csproj", "{60F62EC3-8E1F-99DF-8DCC-403584C6236D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE39DCC7-6CE9-C6C1-F506-CBD6EB297B29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE39DCC7-6CE9-C6C1-F506-CBD6EB297B29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE39DCC7-6CE9-C6C1-F506-CBD6EB297B29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE39DCC7-6CE9-C6C1-F506-CBD6EB297B29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BF06455-CC0E-C2C5-B0EE-FE0801A5276B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BF06455-CC0E-C2C5-B0EE-FE0801A5276B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BF06455-CC0E-C2C5-B0EE-FE0801A5276B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BF06455-CC0E-C2C5-B0EE-FE0801A5276B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60F62EC3-8E1F-99DF-8DCC-403584C6236D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60F62EC3-8E1F-99DF-8DCC-403584C6236D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60F62EC3-8E1F-99DF-8DCC-403584C6236D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60F62EC3-8E1F-99DF-8DCC-403584C6236D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
