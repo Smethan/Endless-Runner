@@ -15,9 +15,10 @@ public class PlayerMovement : MonoBehaviour {
     public float MoveSpeed;
     public GameObject shot;
     public Transform shotSpawn;
+    public Transform shotSpawnRight;
     public float fireDelta = 0.5F;
     public AudioClip Firesound;
-    public AudioClip BlastSound;
+    
     public bool GameOver = false;
 
     // Use this for initialization
@@ -52,6 +53,7 @@ public class PlayerMovement : MonoBehaviour {
         {
             nextFire = Time.time + fireDelta;
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+            Instantiate(shot, shotSpawnRight.position, shotSpawnRight.rotation);
             if (IsPoweredUp)
             {
                 audioSource.Play();

@@ -6,6 +6,7 @@ public class ContactDestroy : MonoBehaviour {
 
     public int scoreValue;
     private GameController gameController;
+    public GameObject Enemyexplosion;
 
     void Start()
     {
@@ -22,6 +23,7 @@ void OnTriggerEnter(Collider other)
         {
             gameController.AddScore(scoreValue);
             Destroy(other.gameObject);
+            Instantiate(Enemyexplosion, transform.position, transform.rotation);
             Destroy(gameObject);
         }
         if (other.tag == "Player")
