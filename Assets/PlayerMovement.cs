@@ -9,16 +9,22 @@ public class PlayerMovement : MonoBehaviour {
     private GameObject newProjectile;
     private float nextFire = 0.5F;
     private int PowerLength = 5;
+    private AudioSource audioSource;
+    private bool IsPoweredUp = false;
 
     public float MoveSpeed;
     public GameObject shot;
     public Transform shotSpawn;
     public float fireDelta = 0.5F;
+    public AudioClip Firesound;
+    public AudioClip BlastSound;
+    public bool GameOver = false;
 
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody>();
-	}
+        audioSource = GetComponent<AudioSource>();
+    }
 	
   // void FixedUpdate ()
    // {
@@ -45,7 +51,17 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetButton("Fire1") && Time.time > nextFire)
         {
             nextFire = Time.time + fireDelta;
-           Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+            Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+            if (IsPoweredUp)
+            {
+                audioSource.Play();
+                audioSource.volume = 0.5f;
+            }
+            if (!IsPoweredUp)
+            {
+                audioSource.Play();
+                audioSource.volume = 1f;
+            }
         }
 
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, minX, maxX), transform.localPosition.y,transform.localPosition.z);
@@ -60,9 +76,11 @@ public class PlayerMovement : MonoBehaviour {
 
     IEnumerator PowerUpTime ()
     {
-        fireDelta = 0.01f;
+        fireDelta = 0.1f;
+        IsPoweredUp = true;
         yield return new WaitForSeconds(5f);
         fireDelta = 0.5f;
+        IsPoweredUp = false;
         
     }
     

@@ -27,6 +27,7 @@ void OnTriggerEnter(Collider other)
         if (other.tag == "Player")
         {
             Destroy(other.gameObject);
+            other.GetComponent<PlayerMovement>().GameOver = true;
         }
         if (other.tag == "Boundary")
         {

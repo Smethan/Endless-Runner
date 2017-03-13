@@ -13,7 +13,9 @@ public class GameController : MonoBehaviour {
     public int hazardCount;
     public Text ScoreText;
     public int Score;
-    private float[] SpawnPoints;     
+    private float[] SpawnPoints;
+    private PlayerMovement player;
+    public Text GameOverText; 
 
 	// Use this for initialization
 	void Start () {
@@ -21,8 +23,35 @@ public class GameController : MonoBehaviour {
         SpawnPoints = new float[3] { -3, 0, 3 };
         Score = 0;
         UpdateScore();
-        
-	}
+        GameObject playerObject = GameObject.FindWithTag("Player");
+        if (playerObject != null)
+        {
+            player = playerObject.GetComponent<PlayerMovement>();
+        }
+        GameOverText.enabled = false;
+
+    }
+    void Update()
+    {
+        if (player.GameOver)
+        {
+            StopAllCoroutines();
+            PlayerGameOver();
+        }
+    }
+    void PlayerGameOver ()
+    {
+        GameOverText.enabled = true;
+        //GameOverText.text = GameOverText.text + "Score: " + Score;
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Application.LoadLevel(Application.loadedLevel);
+        }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+    }
     void UpdateScore()
     {
         ScoreText.text = "" + Score;
@@ -46,7 +75,7 @@ public class GameController : MonoBehaviour {
                 Vector3 SpawnpositionLow = new Vector3(SpawnPoints[Random.Range(0, SpawnPoints.Length)], -18.2f, 10);
                 Instantiate(Hazard, Spawnposition, SpawnRotation);
                 float RandomNum = Random.Range(0, 5000);
-                if (RandomNum >= 4500)
+                if (Score % 1000 == 0)
                 {
                     Instantiate(PowerUp, SpawnpositionLow, SpawnRotation);
                 }
