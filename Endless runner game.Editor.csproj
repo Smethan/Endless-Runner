@@ -151,17 +151,17 @@
     <Reference Include="UnityEditor.iOS.Extensions.Common">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
-    <Reference Include="PlayMakerEditorResources">
-      <HintPath>Assets\PlayMaker\Editor\PlayMakerEditorResources.dll</HintPath>
-    </Reference>
-    <Reference Include="PlayMakerEditor">
-      <HintPath>Assets\PlayMaker\Editor\PlayMakerEditor.dll</HintPath>
+    <Reference Include="ConditionalExpression">
+      <HintPath>Assets\PlayMaker\ConditionalExpression.dll</HintPath>
     </Reference>
     <Reference Include="ConditionalExpressionEditor">
       <HintPath>Assets\PlayMaker\Editor\ConditionalExpressionEditor.dll</HintPath>
     </Reference>
-    <Reference Include="ConditionalExpression">
-      <HintPath>Assets\PlayMaker\ConditionalExpression.dll</HintPath>
+    <Reference Include="PlayMakerEditor">
+      <HintPath>Assets\PlayMaker\Editor\PlayMakerEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="PlayMakerEditorResources">
+      <HintPath>Assets\PlayMaker\Editor\PlayMakerEditorResources.dll</HintPath>
     </Reference>
     <Reference Include="PlayMaker">
       <HintPath>Assets\Plugins\PlayMaker\PlayMaker.dll</HintPath>

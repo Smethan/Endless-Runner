@@ -102,6 +102,7 @@
     <Compile Include="Assets\ContactDestroy.cs" />
     <Compile Include="Assets\Death_By_Boundary.cs" />
     <Compile Include="Assets\DestroyByTime.cs" />
+    <Compile Include="Assets\EnemyAI.cs" />
     <Compile Include="Assets\GameController.cs" />
     <Compile Include="Assets\Mover.cs" />
     <Compile Include="Assets\PlayMaker\Actions\ActivateGameObject.cs" />
