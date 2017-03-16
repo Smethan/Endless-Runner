@@ -8,24 +8,30 @@ public class EnemyAI : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        StartCoroutine(EnemyShoot());
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        Shooter;
     }
-    IEnumerator EnemyShoot()
+
+    IEnumerator Shooter()
     {
-        yield return new WaitForSeconds(1f);
-        while (true)
-        {
-            Vector3 SpawnPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
-            Quaternion SpawnRotation = Quaternion.Euler(0, 0, 0);
-            Instantiate(Shot, SpawnPosition, SpawnRotation);
-            //yield return new WaitForSeconds(ShootWait);
+        while(true) {
+            EnemyShoot;
+            yield return new WaitForSeconds(1f);
         }
+
+        yield return 0;
+    }
+
+    void EnemyShoot()
+    {
+        Vector3 SpawnPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
+        Quaternion SpawnRotation = Quaternion.Euler(0, 0, 0);
+        Instantiate(Shot, SpawnPosition, SpawnRotation);
     }
 
 }
