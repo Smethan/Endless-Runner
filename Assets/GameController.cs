@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour {
 
     public GameObject Hazard;
     public GameObject PowerUp;
-    public int SpawnWait;
+    public float SpawnWait;
     public int StartWait;
     public int WaveWait;
     public int hazardCount;
@@ -15,12 +15,21 @@ public class GameController : MonoBehaviour {
     public int Score;
     private float[] SpawnPoints;
     private PlayerMovement player;
-    public Text GameOverText; 
+    private Vector3 Spawnposition;
+    private Vector3 SpawnpositionLow;
+    private Vector3 SpawnpositionHigh;
+    private Quaternion SpawnRotation;
+    public Text GameOverText;
+    public GameObject Enemy;
 
 	// Use this for initialization
 	void Start () {
         StartCoroutine(SpawnWaves());
         SpawnPoints = new float[3] { -3, 0, 3 };
+        SpawnRotation = Quaternion.Euler(90, 0, 0);
+        Spawnposition = new Vector3(SpawnPoints[Random.Range(0, SpawnPoints.Length)], -18, 10);
+        SpawnpositionLow = new Vector3(SpawnPoints[Random.Range(0, SpawnPoints.Length)], -18.2f, 10);
+        SpawnpositionHigh = new Vector3(SpawnPoints[Random.Range(0, SpawnPoints.Length)], -17.8f, 10);
         Score = 0;
         UpdateScore();
         GameObject playerObject = GameObject.FindWithTag("Player");
@@ -71,8 +80,8 @@ public class GameController : MonoBehaviour {
             {
                 Quaternion SpawnRotation = Quaternion.Euler(90, 0, 0);
                 //Quaternion spawnRotation = Quaternion.identity;
-                Vector3 Spawnposition = new Vector3(SpawnPoints[Random.Range(0, SpawnPoints.Length)], -18, 10);
-                Vector3 SpawnpositionLow = new Vector3(SpawnPoints[Random.Range(0, SpawnPoints.Length)], -18.2f, 10);
+                //private Vector3 Spawnposition = new Vector3(SpawnPoints[Random.Range(0, SpawnPoints.Length)], -18, 10);
+                //private Vector3 SpawnpositionLow = new Vector3(SpawnPoints[Random.Range(0, SpawnPoints.Length)], -18.2f, 10);
                 Instantiate(Hazard, Spawnposition, SpawnRotation);
                 float RandomNum = Random.Range(0, 5000);
                 if (Score % 1000 == 0)
@@ -83,6 +92,8 @@ public class GameController : MonoBehaviour {
                 yield return new WaitForSeconds(SpawnWait);
                 
             }
+            Instantiate(Enemy, Spawnposition, SpawnRotation);
+            SpawnWait = SpawnWait - 0.005f;
             yield return new WaitForSeconds(WaveWait);
         }
     }
