@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour {
     public float MoveSpeed;
     public GameObject shot;
     public Transform shotSpawn;
+    public int shotdamage = 10;
     public Transform shotSpawnRight;
     public float fireDelta = 0.5F;
     public AudioClip Firesound;

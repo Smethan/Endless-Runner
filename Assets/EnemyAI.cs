@@ -3,25 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyAI : MonoBehaviour {
-    private float ShootWait = 0.8f;
+    public float ShootWait = 0.8f;
     public GameObject Shot;
+    public int health;
     // Use this for initialization
-    void Start()
+    void Awake()
     {
-
+        StartCoroutine(Shooter());
     }
 
     // Update is called once per frame
-    void Update()
+    public void SubtractHealth(int AmntToSubtract)
     {
-        Shooter;
+        health -= AmntToSubtract;
     }
 
     IEnumerator Shooter()
     {
         while(true) {
-            EnemyShoot;
-            yield return new WaitForSeconds(1f);
+            EnemyShoot();
+            yield return new WaitForSeconds(ShootWait);
         }
 
         yield return 0;
@@ -30,7 +31,7 @@ public class EnemyAI : MonoBehaviour {
     void EnemyShoot()
     {
         Vector3 SpawnPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
-        Quaternion SpawnRotation = Quaternion.Euler(0, 0, 0);
+        Quaternion SpawnRotation = Quaternion.Euler(90, 0, 0);
         Instantiate(Shot, SpawnPosition, SpawnRotation);
     }
 
